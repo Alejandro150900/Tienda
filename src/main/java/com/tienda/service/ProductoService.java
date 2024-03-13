@@ -1,16 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package com.tienda.service;
 
 import com.tienda.domain.Producto;
 import java.util.List;
 
-// Se obtiene un listado de productos en un List
 public interface ProductoService {
-    public List<Producto>getProductos(boolean activos);
-    
+
+    public List<Producto> getProductos(boolean activo);
+
     // Se obtiene un Producto, a partir del id de un producto
     public Producto getProducto(Producto producto);
     
@@ -20,6 +16,9 @@ public interface ProductoService {
     
     // Se elimina el producto que tiene el id pasado por parámetro
     public void delete(Producto producto);
+    
+    //Lista de productos con precio entre, ordenados por descripción (Consulta Ampliada)
+    public List<Producto> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup);
+    
+    
 }
-
-
